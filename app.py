@@ -43,7 +43,7 @@ def predict_price(year,km_driven,location,transmission,fuel,owner_type,Brand):
         x[brand_index]=1
     return __model.predict([x])[0]
 
-@app.route('/predict',methods=['POST','GET'])
+@app.route("/predict",methods=["GET","POST"])
 def predict():
     if request.method=="POST":
         year=int(request.form['year'])
