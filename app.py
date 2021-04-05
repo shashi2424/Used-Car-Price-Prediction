@@ -2,13 +2,16 @@ from flask import render_template, request, Flask, url_for
 import pickle
 import numpy as np
 import json
+import jsonify
+import requests
+import sklearn
 
 __model=None
 __columns=None
 
 app=Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=["GET"])
 def home():
     return render_template("home.html")
 
@@ -43,7 +46,7 @@ def predict_price(year,km_driven,location,transmission,fuel,owner_type,Brand):
         x[brand_index]=1
     return __model.predict([x])[0]
 
-@app.route("/predict",methods=["GET","POST"])
+@app.route("/predict",methods=["POST"])
 def predict():
     if request.method=="POST":
         year=int(request.form['year'])
