@@ -2,7 +2,6 @@ from flask import render_template, request, Flask, url_for
 import pickle
 import numpy as np
 import json
-import jsonify
 import requests
 import sklearn
 
