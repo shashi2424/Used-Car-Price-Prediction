@@ -1,4 +1,4 @@
-from flask import *
+from flask import render_template,request,Flask
 import pickle
 import numpy as np
 import json
