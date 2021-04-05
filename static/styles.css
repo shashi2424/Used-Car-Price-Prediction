@@ -11,6 +11,13 @@ h2
 {
     background-color:rgb(200,200,200)
 }
+.container
+{
+ min-height:100px; 
+ width:50% ;
+ margin:auto;
+}
+
 h6
 {
 font-family:serif;
