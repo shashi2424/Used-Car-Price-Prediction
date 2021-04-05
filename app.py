@@ -1,4 +1,4 @@
-from flask import render_template,request,Flask
+from flask import render_template,request,Flask,url_for
 import pickle
 import numpy as np
 import json
@@ -56,7 +56,7 @@ def predict():
         
         result={'year':year,'km_driven':km_driven,'location':location,'transmission':transmission,'fuel':fuel,'owner':owner,'brand':brand}
         test=int(predict_price(year,km_driven,location,transmission,fuel,owner,brand))
-        return render_template('home.html',prediction="The Price of the car {}".format(test))
+        return render_template("home.html",prediction="The Price of the car {}".format(test))
         
 if __name__=="__main__":
     app.run(debug=True)
