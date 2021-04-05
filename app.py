@@ -2,12 +2,14 @@ from flask import render_template,request,Flask,url_for
 import pickle
 import numpy as np
 import json
-import sklearn
 
 __model=None
 __columns=None
 
 app=Flask(__name__)
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 def home():
